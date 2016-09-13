@@ -1,6 +1,8 @@
 
 FROM mhart/alpine-node:4.5
 
+RUN apk add --update bash && rm -rf /var/cache/apk/*
+
 # Make sure we have a directory for the application
 RUN mkdir -p /var/www
 
