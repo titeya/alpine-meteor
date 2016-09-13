@@ -1,16 +1,5 @@
-# DOCKER-VERSION 1.8.1
-# METEOR-VERSION 1.2.1
-FROM debian:jessie
 
-RUN apt-get update
-
-# Install git, curl
-RUN apt-get update && \
-   apt-get install -y curl && \
-   (curl https://deb.nodesource.com/setup | sh) && \
-   apt-get install -y nodejs jq && \
-   apt-get clean && \
-   rm -Rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+FROM mhart/alpine-node:4.5
 
 # Make sure we have a directory for the application
 RUN mkdir -p /var/www && \
