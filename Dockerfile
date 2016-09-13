@@ -5,7 +5,7 @@ RUN apk add --update bash jq python make g++ && rm -rf /var/cache/apk/*
 
 # Make sure we have a directory for the application
 RUN mkdir -p /var/www && \
-   ln -s /usr/bin/nodejs /usr/bin/node
+   ln -s /usr/bin/node /usr/bin/nodejs
 
 # Install Meteor -- now done on-demand to reduce image size
 # If you supply your pre-bundled app, you do not need the
