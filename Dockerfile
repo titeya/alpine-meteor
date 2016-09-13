@@ -1,7 +1,7 @@
 
-FROM mhart/alpine-node:4.5
+FROM mhart/alpine-node:4
 
-RUN apk add --update bash && rm -rf /var/cache/apk/*
+RUN apk add --update bash jq python make g++ && rm -rf /var/cache/apk/*
 
 # Make sure we have a directory for the application
 RUN mkdir -p /var/www
