@@ -25,9 +25,6 @@ RUN chown -R www-data:www-data /var/www
 ADD entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 
-# Add known_hosts file
-ADD known_hosts /root/.ssh/known_hosts
-
 EXPOSE 80
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
