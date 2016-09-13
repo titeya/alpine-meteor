@@ -25,7 +25,7 @@ mkdir -p $SRC_DIR
 # from there.
 if [ -n "${BUNDLE_URL}" ]; then
    echo "Downloading Application bundle from ${BUNDLE_URL}..."
-   curl ${CURL_OPTS} -o /tmp/bundle.tar.gz ${BUNDLE_URL}
+   fetch --repo=${BUNDLE_URL} --tag=${BUNDLE_TAG} --release-asset=${BUNDLE_APP} /tmp/bundle.tar.gz
    tar -zxvf /tmp/bundle.tar.gz -C ${APP_DIR}
 fi
 
