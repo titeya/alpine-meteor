@@ -23,10 +23,8 @@ mkdir -p $SRC_DIR
 
 # If we were given a BUNDLE_URL, download the bundle
 # from there.
-if [ -n "${BUNDLE_URL}" ]; then
-   echo "Downloading Application bundle from ${BUNDLE_URL}..."
-   fetch --repo=${BUNDLE_URL} --tag=${BUNDLE_TAG} --release-asset=${BUNDLE_APP} /tmp/bundle.tar.gz
-   tar -zxvf /tmp/bundle.tar.gz -C ${APP_DIR}
+if [ -n "${BUNDLE_APP}" ]; then
+   tar -zxvf /var/mapps/${BUNDLE_APP} -C ${APP_DIR}
 fi
 
 # Locate the actual bundle directory
