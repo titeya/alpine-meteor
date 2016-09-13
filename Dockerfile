@@ -2,8 +2,7 @@
 FROM mhart/alpine-node:4.5
 
 # Make sure we have a directory for the application
-RUN mkdir -p /var/www && \
-   chown -R www-data:www-data /var/www
+RUN mkdir -p /var/www
 
 # Install Meteor -- now done on-demand to reduce image size
 # If you supply your pre-bundled app, you do not need the
