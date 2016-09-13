@@ -25,8 +25,8 @@ mkdir -p $SRC_DIR
 # from there.
 if [ -n "${BUNDLE_URL}" ]; then
    echo "Downloading Application bundle from ${BUNDLE_URL}..."
-   curl ${CURL_OPTS} -o /tmp/bundle.tgz ${BUNDLE_URL}
-   tar -zxvf /tmp/bundle.tgz -C ${APP_DIR}
+   curl ${CURL_OPTS} -o /tmp/bundle.tar.gz ${BUNDLE_URL}
+   tar -zxvf /tmp/bundle.tar.gz -C ${APP_DIR}
 fi
 
 # Locate the actual bundle directory
