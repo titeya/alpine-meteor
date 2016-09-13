@@ -6,18 +6,13 @@ RUN apt-get update
 
 # Install git, curl
 RUN apt-get update && \
-   apt-get install -y git curl && \
-   (curl https://deb.nodesource.com/setup | sh) && \
    apt-get install -y nodejs jq && \
    apt-get clean && \
    rm -Rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl -o /usr/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.0.9/fetch_linux_amd64 && \
-   chmod +x /usr/bin/fetch
-
 # Make sure we have a directory for the application
-RUN mkdir -p /var/www
-RUN chown -R www-data:www-data /var/www
+RUN mkdir -p /var/www && \
+   chown -R www-data:www-data /var/www
 
 # Install Meteor -- now done on-demand to reduce image size
 # If you supply your pre-bundled app, you do not need the
